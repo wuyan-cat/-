@@ -17,7 +17,7 @@ public class ExceptionCatch {
      * @param e
      * @return
      */
-    @ExceptionHandler(Exception.class)
+    @ExceptionHandler(Exception.class)//只要是exception的异常都会去处理
     @ResponseBody
     public ResponseResult exception(Exception e){
         e.printStackTrace();
@@ -31,7 +31,7 @@ public class ExceptionCatch {
      * @param e
      * @return
      */
-    @ExceptionHandler(CustomException.class)
+    @ExceptionHandler(CustomException.class)//自定义的异常拦截
     @ResponseBody
     public ResponseResult exception(CustomException e){
         log.error("catch exception:{}",e);

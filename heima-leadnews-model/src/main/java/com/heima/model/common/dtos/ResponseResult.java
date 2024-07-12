@@ -136,12 +136,14 @@ public class ResponseResult<T> implements Serializable {
 
     public static void main(String[] args) {
         //前置
-        /*AppHttpCodeEnum success = AppHttpCodeEnum.SUCCESS;
+/*
+        AppHttpCodeEnum success = AppHttpCodeEnum.SUCCESS;
         System.out.println(success.getCode());
-        System.out.println(success.getErrorMessage());*/
+        System.out.println(success.getErrorMessage());
+*/
 
         //查询一个对象
-        /*Map map = new HashMap();
+/*        Map map = new HashMap();
         map.put("name","zhangsan");
         map.put("age",18);
         ResponseResult result = ResponseResult.okResult(map);
@@ -158,12 +160,12 @@ public class ResponseResult<T> implements Serializable {
         System.out.println(JSON.toJSONString(result));*/
 
         //查询分页信息
-        PageResponseResult responseResult = new PageResponseResult(1,5,50);//当前页1，每页显示5，总条数50
+/*        PageResponseResult responseResult = new PageResponseResult(1,5,50);//当前页1，每页显示5，总条数50
         List list = new ArrayList();
         list.add("itcast");
         list.add("itheima");
         responseResult.setData(list);
-        System.out.println(JSON.toJSONString(responseResult));
+        System.out.println(JSON.toJSONString(responseResult));*/
 
     }
 

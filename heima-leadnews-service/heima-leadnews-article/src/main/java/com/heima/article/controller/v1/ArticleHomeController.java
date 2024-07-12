@@ -10,6 +10,7 @@ package com.heima.article.controller.v1;
 import com.heima.article.service.ApArticleService;
 import com.heima.common.contants.ArticleConstants;
 import com.heima.model.article.dtos.ArticleHomeDto;
+import com.heima.model.article.pojos.ApArticleContent;
 import com.heima.model.common.dtos.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -52,4 +53,5 @@ public class ArticleHomeController {
 
         return aparticleService.load(dto, ArticleConstants.LOADTYPE_LOAD_NEW);
     }
+
 }

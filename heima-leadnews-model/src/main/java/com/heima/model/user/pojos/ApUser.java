@@ -17,7 +17,7 @@ import java.util.Date;
  * @author itheima
  */
 @Data
-@TableName("ap_user")
+@TableName("ap_user") //表的映射
 public class ApUser implements Serializable {
 
     private static final long serialVersionUID = 1L;

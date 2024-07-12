@@ -26,7 +26,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-@Transactional
+@Transactional  //事务
 @Slf4j
 public class ApUserServiceImpl extends ServiceImpl<ApUserMapper, ApUser> implements ApUserService {
     /**
@@ -36,7 +36,7 @@ public class ApUserServiceImpl extends ServiceImpl<ApUserMapper, ApUser> impleme
      */
     @Override
     public ResponseResult login(LoginDto dto) {
-        //1、正常登录
+        //1、正常登录 用户名 密码
         //先验证手机号和密码都不为空
         if(StringUtils.isNoneBlank(dto.getPhone()) && StringUtils.isNoneBlank(dto.getPassword())){
             //1.1根据手机号查询用户信息
@@ -49,7 +49,7 @@ public class ApUserServiceImpl extends ServiceImpl<ApUserMapper, ApUser> impleme
             String salt = dbUser.getSalt();
             String password = dto.getPassword();
             String pswd = DigestUtils.md5DigestAsHex((password + salt).getBytes());
-            if (!pswd.equals(dbUser.getPassword())){
+            if (!pswd.equals(dbUser.getPassword())){ //密码不一样
                 return ResponseResult.errorResult(AppHttpCodeEnum.LOGIN_PASSWORD_ERROR);
             }
 
